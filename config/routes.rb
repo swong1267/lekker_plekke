@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :places do
     get :like
-    resources :comments
+    resources :comments do
+      get :like
+    end
   end
 
 

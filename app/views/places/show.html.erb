@@ -11,10 +11,16 @@
 <%= render '/comments/form' %>
 
 <% @place.comments.each do |comment| %>
-	<p>
-		<%= comment.commenter %>:		
-		<%= comment.text %>		
-	</p>
+	<table>
+		<tr>
+			<td><%= comment.commenter %>: <%= comment.text %></td>
+			<td>Likes: <%= comment.likes %></td>
+			<% if comment.commenter != nil %>
+				<!-- for some reason, i have a nil comment... why? help pls -->
+	    	<td><%= link_to "Like", place_comment_like_path(@place, comment.id) %></td>
+	    <% end %>
+		</tr>
+	</table>
 <% end %>
 
 <%= link_to "Back", places_path %>

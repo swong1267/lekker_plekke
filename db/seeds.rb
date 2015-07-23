@@ -18,7 +18,7 @@ place2 = Place.second
 
 Comment.delete_all
 
-Comment.create commenter: "Brian", text: "Bring me biltong", place: place1
-Comment.create commenter: "Erica", text: "Yay Cape Town", place: place2
-Comment.create commenter: "Ian", text: "Howzit", place: place1
+Comment.create commenter: "Brian", text: "Bring me biltong", place: place1, likes: 0
+Comment.create commenter: "Erica", text: "Yay Cape Town", place: place2, likes: 0
+Comment.create commenter: "Ian", text: "Howzit", place: place1, likes: 0
 
