@@ -1,6 +1,12 @@
 <h1>Index Page</h1>
 <% @places.each do |place| %>
-	<p><%= link_to place.name, place_path(place) %></p>
+	<table>
+		<tr>
+			<td><%= link_to place.name, place_path(place) %></td>
+			<td><%= link_to "Edit", edit_place_path(place) %></td>
+			<td><%= link_to "Destroy", place_path(place) %></td>
+		</tr>
+	</table>
 <% end %>
 
 <%= link_to "New Place", new_place_path %>
