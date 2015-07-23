@@ -3,6 +3,8 @@
 <p>Description: <%= @place.description %></p>
 <p>Rating: <%= @place.rating %></p>
 <p>Must See: <%= @place.must_see %></p>
+<p>Likes: <%= @place.likes %></p>
+<%= link_to "Like", place_like_path(@place) %>
 
 <h2>Comments</h2>
 

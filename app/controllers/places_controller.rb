@@ -42,9 +42,19 @@ class PlacesController < ApplicationController
     redirect_to places_path
   end
 
+  def like
+    @place = Place.find(params[:place_id])
+    #explain??? why not just :id ^^
+    @place.likes += 1
+    @place.save
+
+    redirect_to places_path
+  end
+
   private
     def place_params
       params.require(:place).permit(:name, :description, :location, :rating, :must_see)
+      #include likes?
     end
 
 end
