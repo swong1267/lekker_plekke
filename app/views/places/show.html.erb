@@ -4,5 +4,16 @@
 <p>Rating: <%= @place.rating %></p>
 <p>Must See: <%= @place.must_see %></p>
 
+<h2>Comments</h2>
+
+
+
+<% @place.comments.each do |comment| %>
+	<p>
+		<%= comment.commenter %>:		
+		<%= comment.text %>		
+	</p>
+<% end %>
+
 <%= link_to "Back", places_path %>
 <%= link_to "Edit", edit_place_path(@place) %>

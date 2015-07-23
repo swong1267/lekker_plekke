@@ -1,4 +1,18 @@
 <%= form_for @place do |f| %>
+
+  <% if @place.errors.any? %>
+    <div id="error_explantion">
+      <h2>
+        <%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:
+      </h2>
+      <ul>
+        <% @place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
