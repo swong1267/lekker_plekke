@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
     redirect_to @place
   end
 
-  def update #not updating waterfront location
+  def update 
     @place = Place.find(params[:id])
 
     if @place.update(place_params)
