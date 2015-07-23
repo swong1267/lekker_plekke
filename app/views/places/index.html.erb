@@ -1,12 +1,18 @@
 <h1>Index Page</h1>
+
+<table>
 <% @places.each do |place| %>
-	<table>
-		<tr>
-			<td><%= link_to place.name, place_path(place) %></td>
+	<col>
+	  <tr>
+	    <td colspan="100"><%= link_to place.name, place_path(place) %></td>
 			<td><%= link_to "Edit", edit_place_path(place) %></td>
 			<td><%= link_to "Destroy", place_path(place), method: :delete, data: { confirm: "Are you sure? " } %></td>
-		</tr>
-	</table>
+			<td colspan="100"></td>
+	  </tr>
+  </col>
 <% end %>
+</table>
+
+
 
 <%= link_to "New Place", new_place_path %>
